@@ -1,8 +1,10 @@
 #include "main.h"
-
+#define MAIN_CONFIG
 
 int main(void)
 {
-	return 0;
+	System_Init();
+	while(1);
+	
 }
 

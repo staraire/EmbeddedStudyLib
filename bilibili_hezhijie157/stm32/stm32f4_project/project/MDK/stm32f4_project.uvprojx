@@ -618,6 +618,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\src\main.c</FilePath>
             </File>
+            <File>
+              <FileName>system.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\src\system.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
