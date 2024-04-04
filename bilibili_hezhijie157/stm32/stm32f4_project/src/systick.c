@@ -44,10 +44,10 @@ uint32 GetRunTime(void)
 {
     unsigned int RunTime;
 
-    CPU_INT_DISABLE(); // 关闭中断
+    //CPU_INT_DISABLE(); // 关闭中断
     // 防止g_iRunTimer冲突
     RunTime = g_iRunTimer;
-    CPU_INT_ENABLE(); // 开中断
+    //CPU_INT_ENABLE(); // 开中断
     return RunTime;
 }
 

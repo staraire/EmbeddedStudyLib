@@ -29,6 +29,30 @@ void LEDControl(void)
     SystickDelayMs(1000);
 }
 
+void BEEP_GPIO_Init(void)
+{
+    GPIO_InitTypeDef GPIO_InitStructure; // IO配置结构体
+    // 时钟使能
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOF,ENABLE);
+    // 初始GPIO
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;               //IO口
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;           //输出模式
+    GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;          //推挽输出 
+    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN;            //没有输出时下拉
+    GPIO_InitStructure.GPIO_Speed = GPIO_High_Speed;        //100Mhz
+    GPIO_Init(GPIOF,&GPIO_InitStructure);
+    // 初始默认输出低
+    GPIO_ResetBits(GPIOF,GPIO_Pin_8);
+
+}
+void BEEP_ON(void)
+{
+    GPIO_SetBits(GPIOF,GPIO_Pin_8);
+}
+void BEEP_OFF(void)
+{
+    GPIO_ResetBits(GPIOF,GPIO_Pin_8);
+}
 
 
 

@@ -1,5 +1,9 @@
 #include "usart.h"
 
+
+unsigned char g_USART1_RxBuf[USART1_RX_BUF_SIZE]; // 串口1接收缓冲数组
+unsigned int g_USART1_RecPos = 0; // 存放当前串口接收数据存放的位置
+
 void USART1_Init(void)
 {
     GPIO_InitTypeDef GPIO_InitStructure;//IO配置结构体
@@ -19,7 +23,7 @@ void USART1_Init(void)
     GPIO_PinAFConfig(GPIOA,GPIO_PinSource9,GPIO_AF_USART1);
     GPIO_PinAFConfig(GPIOA,GPIO_PinSource10,GPIO_AF_USART1);
     // 串口参数初始化
-    USART_InitStructure.USART_BaudRate = 115200;
+    USART_InitStructure.USART_BaudRate = USART1_BAUD;
     USART_InitStructure.USART_WordLength = USART_WordLength_8b;
     USART_InitStructure.USART_StopBits = USART_StopBits_1;
     USART_InitStructure.USART_Parity = USART_Parity_No;
@@ -42,6 +46,45 @@ void USART1_Init(void)
 }
 
 
+
+void USART1_IRQHandler(void)
+{
+    unsigned char RecCh;
+    // 串口接收数据
+    if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)
+    {
+				Usart1RecTimer = 10;
+        RecCh = USART_ReceiveData(USART1);
+        g_USART1_RxBuf[g_USART1_RecPos++] = RecCh;
+        USART_ClearITPendingBit(USART1,USART_IT_RXNE);
+    }
+    // 串口溢出错误
+    if(USART_GetFlagStatus(USART1, USART_FLAG_ORE) == SET)
+    {   
+        USART_ClearFlag(USART1,USART_FLAG_ORE);
+    }
+}
+
+unsigned char USART1_RecProcess(void)
+{
+    // 超时
+    if(Usart1RecTimer) return FALSE;
+    // 没数据
+    if(!g_USART1_RecPos) return FALSE;
+    g_USART1_RxBuf[g_USART1_RecPos] = '\0';
+    // 收包处理
+    if(strstr((const char *)g_USART1_RxBuf,"beep on") != NULL)
+    {
+        BEEP_ON();
+    }
+    else if(strstr((const char *)g_USART1_RxBuf,"beep off") != NULL)
+    {
+        BEEP_OFF();
+    }
+		memset(g_USART1_RxBuf,0,USART1_RX_BUF_SIZE);
+		g_USART1_RecPos = 0;
+		return TRUE;
+}
 
 
 void USARTSendByte(USART_TypeDef* USARTx, unsigned char ch)

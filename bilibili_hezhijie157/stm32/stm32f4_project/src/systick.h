@@ -3,13 +3,15 @@
 
 #include "config.h"
 
-#define MAX_TIMER 5 // 利用系统滴答定时器实现软件定时器的个数
+#define MAX_TIMER 6 // 利用系统滴答定时器实现软件定时器的个数
 
 extern uint32 sysTimer[MAX_TIMER]; // 
 #define DelayTimer sysTimer[0] // 延时定时器
 #define ATaskTimer sysTimer[1] // A任务运行定时器
 #define BTaskTimer sysTimer[2] // B 任务运行定时器
 #define CTaskTimer sysTimer[3] // C 任务运行定时器
+#define Usart1RecTimer sysTimer[4] // 串口1接收定时器，如果超时，表示一帧接收完毕
+#define Usart1ControlBeepTimer sysTimer[5] // 串口1控制蜂鸣器定时器
 
 void Systick_Init(void); // 滴答定时器初始化
 void SystickDelayMs(uint32 nms); // ms延时
