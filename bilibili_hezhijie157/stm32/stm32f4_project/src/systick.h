@@ -7,7 +7,7 @@
 
 extern uint32 sysTimer[MAX_TIMER]; // 
 #define DelayTimer sysTimer[0] // 延时定时器
-#define ATaskTimear sysTimer[1] // A任务运行定时器
+#define ATaskTimer sysTimer[1] // A任务运行定时器
 #define BTaskTimer sysTimer[2] // B 任务运行定时器
 #define CTaskTimer sysTimer[3] // C 任务运行定时器
 

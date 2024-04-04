@@ -6,7 +6,8 @@ int main(void)
 	System_Init();
 	while(1)
 	{
-			LEDControl();
+		// LEDControl();
+		Task_Run();
 	}
 	
 }
