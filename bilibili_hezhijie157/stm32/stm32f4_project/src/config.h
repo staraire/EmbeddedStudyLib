@@ -31,12 +31,12 @@ EXT unsigned char g_var;
 
 // 外设驱动头文件包含
 #include "system.h"
-
+#include "systick.h"
 //--------------------------
 
 // 全局宏定义
-#define CPU_INT_DISABLE() {__SET_PRIMASK(1);} // 关闭中断
-#define CPU_INT_ENABLE() {__SET_PRIMASK(0);}  // 打开中断
+#define CPU_INT_DISABLE() {__set_PRIMASK(1);} // 关闭中断
+#define CPU_INT_ENABLE() {__set_PRIMASK(0);}  // 打开中断
 
 // 全局类型定义
 typedef enum{FALSE = 0,TRUE = !FALSE}BOOL;

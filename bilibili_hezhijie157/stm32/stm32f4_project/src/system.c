@@ -14,6 +14,9 @@ void System_Init(void)
 {
 
     CPU_Init(); // 配置系统信息
+	
+		// 外设初始化 
+		Systick_Init(); // 系统滴答定时器初始化
 
 }
 

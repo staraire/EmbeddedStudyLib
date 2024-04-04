@@ -6,3 +6,5 @@
   - config 全局配置文件
 - 03.sytem.c文件编写：https://www.bilibili.com/video/BV1kE411Q7Ys
   - 系统初始化函数
+- 04.systick.c文件编写：https://www.bilibili.com/video/BV1yE411Q7yy
+  - 配置滴答定时器
