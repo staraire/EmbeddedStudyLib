@@ -26,6 +26,7 @@ void System_Init(void)
     // 外设初始化 
     Systick_Init(); // 系统滴答定时器初始化
     LED_GPIO_Init(); // LED 初始化
+		USART1_Init();
     
 
 }
@@ -64,5 +65,6 @@ void CTask(void)
 {
     if(CTaskTimer) return;
     CTaskTimer = CTaskPeriod;
-
+    printf("System Total time is %f s\n",GetRunTime()/1000.0);
+    USARTSendString(USART1,"CTask is running\n");
 }

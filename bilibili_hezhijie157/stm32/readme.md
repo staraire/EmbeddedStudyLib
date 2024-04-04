@@ -10,3 +10,11 @@
   - 配置滴答定时器
 - 05.Gpio.c文件编写：https://www.bilibili.com/video/BV1yE411Q7Uu
   - LED配置及驱动
+- 06.仿多任务运行机制编写：https://www.bilibili.com/video/BV1tE411D71k
+  - 定时器分时复用
+- USART
+  - [08.Usart.c文件编写-串口发送1](https://www.bilibili.com/video/BV18E411D7Zb)
+  - [08.Usart.c文件编写-串口发送2](https://www.bilibili.com/video/BV18E411D74C)
+  - [09.Usart.c文件编写-串口中断接收1](https://www.bilibili.com/video/BV18E411D7ue/)
+  - [09.Usart.c文件编写-串口中断接收调试2](https://www.bilibili.com/video/BV1uJ411F73v)
+  - [10.Usart.c文件编写-多串口配置整合](https://www.bilibili.com/video/BV1uJ411F774)

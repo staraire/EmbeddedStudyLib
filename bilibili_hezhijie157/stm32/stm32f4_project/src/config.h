@@ -33,6 +33,7 @@ EXT unsigned char g_var;
 #include "system.h"
 #include "systick.h"
 #include "gpio.h"
+#include "usart.h"
 
 //--------------------------
 

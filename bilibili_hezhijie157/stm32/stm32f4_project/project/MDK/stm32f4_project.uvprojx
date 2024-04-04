@@ -633,6 +633,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\src\gpio.c</FilePath>
             </File>
+            <File>
+              <FileName>usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\src\usart.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
