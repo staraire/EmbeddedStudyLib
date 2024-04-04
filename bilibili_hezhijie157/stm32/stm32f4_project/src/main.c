@@ -4,7 +4,10 @@
 int main(void)
 {
 	System_Init();
-	while(1);
+	while(1)
+	{
+			LEDControl();
+	}
 	
 }
 

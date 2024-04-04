@@ -32,6 +32,8 @@ EXT unsigned char g_var;
 // 外设驱动头文件包含
 #include "system.h"
 #include "systick.h"
+#include "gpio.h"
+
 //--------------------------
 
 // 全局宏定义

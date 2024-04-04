@@ -4,6 +4,7 @@
         "main.h": "c",
         "systick.h": "c",
         "config.h": "c",
-        "stm32f4xx.h": "c"
+        "stm32f4xx.h": "c",
+        "gpio.h": "c"
     }
 }

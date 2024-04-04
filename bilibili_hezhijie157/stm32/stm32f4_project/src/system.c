@@ -17,6 +17,7 @@ void System_Init(void)
 	
 		// 外设初始化 
 		Systick_Init(); // 系统滴答定时器初始化
+		LED_GPIO_Init(); // LED 初始化
 
 }
 

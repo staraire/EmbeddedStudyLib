@@ -628,6 +628,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\src\systick.c</FilePath>
             </File>
+            <File>
+              <FileName>gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\src\gpio.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
