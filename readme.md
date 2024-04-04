@@ -10,4 +10,7 @@
 - 临时存储
   - 存储 `git stash save`
   - 恢复 `git stash pop`
-
+- 暂存
+  - 删除暂存区 `git rm -r --cached . -f`
+  - 添加到暂存 `git add .`
+  - 查看状态 `git status`
