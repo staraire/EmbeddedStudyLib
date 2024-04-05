@@ -29,7 +29,7 @@ void System_Init(void)
     Systick_Init(); // 系统滴答定时器初始化
     LED_GPIO_Init(); // LED 初始化
 		BEEP_GPIO_Init(); // BEEP 初始化
-		USART1_Init(); // 串口初始化
+		USART_USER_Init(); // 串口初始化
     
 
 }
