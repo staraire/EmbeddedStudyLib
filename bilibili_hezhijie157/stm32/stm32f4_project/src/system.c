@@ -28,8 +28,9 @@ void System_Init(void)
     // 外设初始化 
     Systick_Init(); // 系统滴答定时器初始化
     LED_GPIO_Init(); // LED 初始化
-		BEEP_GPIO_Init(); // BEEP 初始化
-		USART_USER_Init(); // 串口初始化
+    BEEP_GPIO_Init(); // BEEP 初始化
+    USART_USER_Init(); // 串口初始化
+    EXTI_USER_Init(); // 外部中断初始化
     
 
 }

@@ -18,3 +18,5 @@
   - [09.Usart.c文件编写-串口中断接收1](https://www.bilibili.com/video/BV18E411D7ue/)
   - [09.Usart.c文件编写-串口中断接收调试2](https://www.bilibili.com/video/BV1uJ411F73v)
   - [10.Usart.c文件编写-多串口配置整合](https://www.bilibili.com/video/BV1uJ411F774)
+- 11.Exti.c文件编写-外部中断：https://www.bilibili.com/video/BV1MJ411F7op
+  - 按键外部中断

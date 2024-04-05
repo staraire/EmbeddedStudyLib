@@ -638,6 +638,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\src\usart.c</FilePath>
             </File>
+            <File>
+              <FileName>exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\src\exti.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
